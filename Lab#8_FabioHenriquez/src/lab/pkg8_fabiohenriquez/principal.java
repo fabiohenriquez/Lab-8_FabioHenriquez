@@ -602,6 +602,14 @@ public class principal extends javax.swing.JFrame {
         }
         db.desconectar();
         
+        for (cliente u : clientes) {
+            if (l_nombre.getText().equals(u.getCuenta()) && l_contraseña.getText().equals(u.getContraseña())){
+                cliente.pack();
+                cliente.setLocationRelativeTo(this);
+                cliente.setVisible(true);
+                 JOptionPane.showMessageDialog(this,"Inicio como cliente");
+                 this.setVisible(false);
+            }else
         
         if (l_nombre.getText().equals(usuario) && l_contraseña.getText().equals(contraseña)) {
             administracion.pack();
@@ -612,18 +620,9 @@ public class principal extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this, "Usuario y contraseña incorrecta");
         }
-        
-        
-        for (cliente u : clientes) {
-            if (l_nombre.getText().equals(u.getCuenta()) && l_contraseña.getText().equals(u.getContraseña())){
-                cliente.pack();
-                cliente.setLocationRelativeTo(this);
-                cliente.setVisible(true);
-                 JOptionPane.showMessageDialog(this,"Inicio como cliente");
-            }else{
-                JOptionPane.showMessageDialog(this, "Usuario y contraseña incorrecta");
-            }
         }
+        
+        
         
     }//GEN-LAST:event_b_loginMouseClicked
 
